@@ -87,6 +87,7 @@ router.post('/room/:id/chat', async (req, res, next) => {
       user: req.session.color,
       chat: req.body.chat,
     });
+    console.log(chat,'<<<<<호출되나?')
     req.app.get('io').of('/chat').to(req.params.id).emit('chat', chat);
     res.send('ok');
   } catch (error) {

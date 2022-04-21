@@ -60,8 +60,12 @@ module.exports = (server, app, sessionMiddleware) => {
         });
       }
     });
+
+    console.log('1')
     socket.on('chat', (data) => {
+      console.log(data, data.room, '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>이거 맞아?')
       socket.to(data.room).emit(data);
     });
+
   });
 };

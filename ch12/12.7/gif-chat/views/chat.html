@@ -63,6 +63,7 @@
     });
     socket.on('chat', function (data) {
       const div = document.createElement('div');
+      console.log('프론트 읽기 시작한다!')
       if (data.user === '{{user}}') {
         div.classList.add('mine');
       } else {
